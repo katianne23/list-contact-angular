@@ -1,59 +1,86 @@
-# ContactsApp
+# 📇 ListContacts App - Angular 21
+![site](https://github.com/katianne23/list-contact-angular/blob/main/public/preview.png)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.5.
+> 💻 Uma aplicação moderna de lista de contatos construída com as últimas features do **Angular**, demonstrando boas práticas e padrões atuais de desenvolvimento.
 
-## Development server
+Este projeto tem caráter educacional e faz parte do meu aprendizado em Angular.
 
-To start a local development server, run:
+[Clique aqui para acessar](list-contact-angular.vercel.app)
 
-```bash
+
+## 🎯 Objetivo do Projeto
+
+Demonstrar proficiência em desenvolvimento Angular moderno, implementando:
+- Standalone components (sem NgModules)
+- Zoneless change detection
+- Estratégias de cache e otimização
+- Formulários reativos complexos
+- Design system próprio
+
+## 🚀 Features Implementadas
+```
+### 1. **Sistema de Cache Inteligente**
+// Cache no localStorage com expiração de 5 minutos
+// Atualização em background sem bloquear UX
+
+ 2. Formulários com UX Avançada
+Validação em tempo real
+Feedback visual imediato
+Radio buttons customizados para categorias
+
+3. Busca Otimizada
+Filtro por múltiplos campos
+Debounce implícito
+Performance com track by id
+
+4. Design System Próprio
+Cards com animações progressivas
+Avatares com iniciais
+Tags coloridas por categoria
+```
+🔧 Configuração e Execução
+bash
+#### Instalar dependências
+npm install
+
+#### Rodar desenvolvimento
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
+#### Build de produção
 ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+📊 Decisões Técnicas
+- Standalone Components: 	Menos boilerplate, melhor tree-shaking
+- Zoneless Change: Detection	Preparação para futuro, performance
+- Cache no localStorage: Experiência offline-first
+- Reactive Forms:	Mais controle e testabilidade
+- Control Flow Syntax:	Sintaxe mais limpa, melhor performance
 
-## Running unit tests
+🎨 UI/UX Design
+Princípios Aplicados
+- Feedback Imediato: Spinners, validações em tempo real
+- Consistência: Design system uniforme
+- Eficiência: Cache e otimizações
+- Acessibilidade: Semântica HTML, contraste adequado
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Componentes UI
+- Cards com animações em cascade
+- Sistema de tags por categoria
+- Botões de ação com ícones
+- Formulários com validação visual
 
-```bash
-ng test
-```
+📚 Aprendizados
+Este projeto foi desenvolvido para explorar:
+- Angular sem Zone.js
+- Estratégias de cache real-world
+- Padrões de formulários complexos
+- Nova sintaxe de templates
+- Performance optimization
 
-## Running end-to-end tests
+## :memo: Licença
 
-For end-to-end (e2e) testing, run:
+Esse projeto está sob a licença MIT.
 
-```bash
-ng e2e
-```
+Katianne Araújo
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
