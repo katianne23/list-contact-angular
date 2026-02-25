@@ -1,0 +1,95 @@
+<div class="page">
+  <a routerLink="/contacts" class="back-link">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      width="16"
+      height="16"
+    >
+      <path d="M19 12H5M12 5l-7 7 7 7" />
+    </svg>
+    Voltar para lista
+  </a>
+
+  <div class="form-card">
+    <div class="form-header">
+      <h2>{{ isEdit ? 'Editar Contato' : 'Novo Contato' }}</h2>
+      <p>
+        {{
+          isEdit
+            ? 'Edite as informações do contato abaixo.'
+            : 'Preencha os campos abaixo para adicionar um novo contato.'
+        }}
+      </p>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Nome <span class="required">*</span></label>
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            placeholder="Jonh"
+            [class.invalid]="f['name'].invalid && f['name'].touched"
+          />
+          @if (f['name'].invalid && f['name'].touched) {
+            <span class="error-msg"> Mínimo 2 caracteres </span>
+          }
+        </div>
+        <div class="form-group">
+          <label for="last"> Sobrenome </label>
+          <input id="last" formControlName="last" type="text" placeholder="Silva" />
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail <span class="required">*</span></label>
+          <input
+            id="email"
+            formControlName="email"
+            type="email"
+            placeholder="joao@email.com"
+            [class.invalid]="f['email'].invalid && f['email'].touched"
+          />
+          @if (f['email'].invalid && f['email'].touched) {
+            <span class="error-msg"> Informe um e-mail válido </span>
+          }
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefone</label>
+          <input id="phone" formControlName="phone" type="text" placeholder="(85) 99999-0000" />
+        </div>
+        <div class="form-group">
+          <label for="tag">Categoria <span class="required">*</span></label>
+          <div class="tag-select">
+            <label class="tag-option" [class.selected]="form.get('tag')?.value === 'work'">
+              <input type="radio" formControlName="tag" value="work" hidden />
+              💼 Trabalho
+            </label>
+            <label class="tag-option" [class.selected]="form.get('tag')?.value === 'friend'">
+              <input type="radio" formControlName="tag" value="friend" hidden />
+              🤝 Amigo
+            </label>
+            <label class="tag-option" [class.selected]="form.get('tag')?.value === 'family'">
+              <input type="radio" formControlName="tag" value="family" hidden />
+              🏠 Família
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <a routerLink="/contacts" class="btn-cancel"> Cancelar </a>
+        <button type="submit" class="btn-submit" [disabled]="loading">
+          @if (!loading) {
+            <span>{{ isEdit ? '✓ Salvar alterações' : '✓ Criar contato' }}</span>
+          } @else {
+            <span>Salvando...</span>
+          }
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
