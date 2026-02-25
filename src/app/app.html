@@ -1,2 +1,21 @@
-<app-contact-form></app-contact-form>
-<router-outlet />
+<header class="header">
+  <div class="header-inner">
+    <a routerLink="/contacts" class="logo">
+      <span class="logo-icon">✦</span>
+      <span class="logo-text">Contacts</span>
+    </a>
+    <nav class="header-nav">
+      <a
+        routerLink="/contacts"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Lista</a
+      >
+      <a routerLink="/contacts/new" routerLinkActive="active">+ Novo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
