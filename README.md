@@ -77,6 +77,10 @@ Este projeto foi desenvolvido para explorar:
 - Nova sintaxe de templates
 - Performance optimization
 
+Dados:
+Foi utilizado a API mockAPI para realizar a integração e exibir os dados.
+
+
 ## :memo: Licença
 
 Esse projeto está sob a licença MIT.
