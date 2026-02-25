@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg:        #f5f4f0;
+  --white:     #ffffff;
+  --border:    #e4e2db;
+  --text:      #1c1b18;
+  --muted:     #8a8880;
+  --accent:    #2d6a4f;
+  --accent-lt: #e8f3ee;
+  --accent-dk: #1f4d39;
+  --danger:    #c0392b;
+  --danger-lt: #fdf0ef;
+  --warn:      #b7791f;
+  --warn-lt:   #fef9ec;
+  --radius:    12px;
+  --shadow:    0 2px 16px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; }
+input, select, textarea { font-family: inherit; }
